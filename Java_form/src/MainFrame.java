@@ -37,8 +37,8 @@ public class MainFrame extends JFrame {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Application();
-                dispose();  // Close the MainFrame
+                new Login().setVisible(true);
+                // dispose();  // Close the MainFrame
             }
         });
 
@@ -50,7 +50,7 @@ public class MainFrame extends JFrame {
         signupButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               new Signup(); // Open the Signup screen
+                new Signup(); // Open the Signup screen
                 dispose();  // Close the MainFrame
             }
         });

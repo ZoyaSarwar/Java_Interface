@@ -1,9 +1,13 @@
 import javax.swing.*;
-import java.awt.*;public class Application extends JFrame {
+import java.awt.*;
+import java.util.List;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Application extends JFrame {
 
     // Constructor
     public Application() {
-        
         // Set frame properties
         setTitle("Login Screen");
         setSize(1000, 700);
@@ -50,7 +54,30 @@ import java.awt.*;public class Application extends JFrame {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10); // Padding
 
+        // Fetch list of cities
+        List<String> cities = PakistanCities.getCities();
 
+        // Create a dropdown (JComboBox) with cities
+        JComboBox<String> cityDropdown = new JComboBox<>(cities.toArray(new String[0]));
+
+        // Add dropdown 
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        add(new JLabel("                         Select City:"), gbc);
+    
+
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        add(cityDropdown, gbc);
+
+        // Add ActionListener to handle dropdown selection
+        cityDropdown.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String selectedCity = (String) cityDropdown.getSelectedItem();
+                JOptionPane.showMessageDialog(Application.this, "You selected: " + selectedCity);
+            }
+        });
 
         // Add a success message in the center
         JLabel successMessage = new JLabel("You are successfully logged in to the Application", SwingConstants.CENTER);
