@@ -1,24 +1,66 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class User {
-    private String message;
+    // private String message;
+    private String name;
+    private String password;
+    
 
     public String login(String[] credentials) {
-        String name = credentials[0];
-        String password = credentials[1];
+        this.name = credentials[0];
+        this.password = credentials[1];
+        String message;
         try{
             if ( name.equals("admin") && password.equals("admin")) {   
-                this.message = "Login successful";
+                message = "Login successful";
             } else {  
-                this.message = "Invalid user name or password";
+                message = "Invalid user name or password";
             }
     
-            return this.message;
+            return message;
     
         } catch (Exception e) {
-            this.message = "Something went wrong, please try again later!";
-            return this.message;
+            message = "Something went wrong, please try again later!";
+            return message;
         }
     
     }
+
+    // public String login(String[] credentials) {
+    //     String message = "Invalid username or password"; // Default failure message
+    
+    //     // Establish connection to database and execute query
+    //     try (Connection connection = DatabaseConnection.getConnection()) {
+    //         // SQL Query
+    //         String query = "SELECT * FROM user WHERE username = ? AND password = ?";
+    //         PreparedStatement statement = connection.prepareStatement(query);
+    
+    //         // Extract username and password from credentials
+    //         String name = credentials[0];
+    //         String password = credentials[1];
+    
+    //         // Set parameters
+    //         statement.setString(1, name);
+    //         statement.setString(2, password);
+    
+    //         // Execute query
+    //         try (ResultSet resultSet = statement.executeQuery()) {
+    //             if (resultSet.next()) { // If resultSet has rows, credentials are valid
+    //                 message = "Login successful";
+    //             }
+    //         }
+    
+    //     } catch (SQLException e) {
+    //         e.printStackTrace();
+    //         message = "Database connection error: " + e.getMessage();
+    //     }
+    
+    //     return message;
+    // }
+    
 
     // public String create(String[]  info){
 

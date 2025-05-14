@@ -15,6 +15,7 @@ public class Login extends javax.swing.JFrame {
      * Creates new form Login
      */
     public Login() {
+        
         initComponents();
     }
 
@@ -38,7 +39,8 @@ public class Login extends javax.swing.JFrame {
         btncancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
+        setTitle("Login Screen");
+        
         javax.swing.GroupLayout txtpanelLayout = new javax.swing.GroupLayout(txtpanel);
         txtpanel.setLayout(txtpanelLayout);
         txtpanelLayout.setHorizontalGroup(
@@ -101,6 +103,10 @@ public class Login extends javax.swing.JFrame {
 
                 // Validate Login
                 if (response == "Login successful") {
+                    JOptionPane.showMessageDialog(Login.this,
+                            username + "has logged in",
+                            "Error",
+                            JOptionPane.ERROR_MESSAGE);
                     new App().setVisible(true);
                     dispose(); 
                 } else {
