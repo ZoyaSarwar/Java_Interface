@@ -16,23 +16,23 @@ public class Controller {
         }  
     }
 
-    // public String registration(String[]  info){
-    //     try {
-    //         User user = new User();
+    public String registration(String[]  info){
+        try {
+            User user = new User();
 
-    //         message = user.create(info);
+            message = user.create(info);
 
-    //         return this.message;
+            return this.message;
 
-    //     } catch (Exception e) {
-    //         // TODO: handle exception
+        } catch (Exception e) {
+            // TODO: handle exception
 
-    //         this.message = "Something went wrong, please try again later!";
+            this.message = "Something went wrong, please try again later!";
 
-    //         return this.message;
-    //     }  
+            return this.message;
+        }  
 
-    //}
+    }
 
     // Get list of pakistan Cities in DropDown list
     public static List<String> getCities() {

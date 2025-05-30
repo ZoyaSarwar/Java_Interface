@@ -116,17 +116,17 @@ public class Signup extends JFrame {
                 } 
                 user[5] = gender; 
 
-                // Controller reg = new Controller();
-                // String response =  reg.registration(user);
-                //     JOptionPane.showMessageDialog(Signup.this,
-                //         "Name: " + user[0] + "\n" +
-                //         "Password: " + user[1] + "\n" +
-                //         "Email: " + user[2] + "\n" +
-                //         "Phone #: " + user[3] + "\n" +
-                //         "Address " + user[4] + "\n" +
-                //         "Gender: " + user[5] + "\n" +
-                //         "Message: " + response,
-                //         "Registration Successful", JOptionPane.INFORMATION_MESSAGE);
+                Controller reg = new Controller();
+                String response =  reg.registration(user);
+                    JOptionPane.showMessageDialog(Signup.this,
+                        "Name: " + user[0] + "\n" +
+                        "Password: " + user[1] + "\n" +
+                        "Email: " + user[2] + "\n" +
+                        "Phone #: " + user[3] + "\n" +
+                        "Address " + user[4] + "\n" +
+                        "Gender: " + user[5] + "\n" +
+                        "Message: " + response,
+                        "Registration Successful", JOptionPane.INFORMATION_MESSAGE);
 
                         
                     new  Application();

@@ -38,7 +38,7 @@ public class MainFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new Login().setVisible(true);
-                // dispose();  // Close the MainFrame
+                dispose();  // Close the MainFrame
             }
         });
 

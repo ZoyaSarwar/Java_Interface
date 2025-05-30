@@ -26,7 +26,7 @@ public class App extends javax.swing.JFrame {
     // @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+        
         citiesdropdown = new javax.swing.JComboBox<>();
         labelcities = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
